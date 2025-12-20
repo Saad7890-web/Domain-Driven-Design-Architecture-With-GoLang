@@ -6,10 +6,11 @@ import (
 	"log"
 
 	"github.com/Saad7890-web/internal/config"
+	_ "github.com/lib/pq"
 )
 
 
-func newPostgresDb(cfg *config.Config) *sql.DB {
+func NewPostgresDb(cfg *config.Config) *sql.DB {
 	dsn := fmt.Sprintf(
 		"host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		cfg.DBHost,
